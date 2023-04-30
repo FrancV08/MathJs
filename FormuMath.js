@@ -37,14 +37,24 @@ function calcularTriangulo(lado1, lado2, base, altura){
 }
 
 
-function calcularAlturaTriangulo(lado1, base){
+function calcularAlturaTrianguloIsoseles(lado1, base){
     if ( lado1 == base){
-        console,console.warn('Este no es un triangulo isoceles');
+        console.warn('Este no es un triangulo isoceles');
     } else{
         return altura = Math.sqrt( (lado1 ** 2) - ( (base ** 2) ) / 4);
     }
 }
 
+function calcularAlturaTrianguloEscaleno(lado1, lado2, lado3) {
+    if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3) {
+      throw new Error('Este no es un triángulo escaleno');
+    }
+    const semiperimetro = (lado1 + lado2 + lado3) / 2;
+    const altura = (2 / lado1) * Math.sqrt(semiperimetro * (semiperimetro - lado1) * (semiperimetro - lado2) * (semiperimetro - lado3));
+    return altura;
+  }
+
+  
 console.log ({
     ladoTriangulo1,
     ladoTriangulo2,
