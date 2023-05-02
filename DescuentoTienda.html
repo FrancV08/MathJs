@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tienda de productos</title>
+	<script>
+		function agregarAlCarrito(precio, descuento) {
+			const precioConDescuento = precio * (1 - descuento / 100);
+			document.getElementById("precio-final").textContent = "Precio final: " + precioConDescuento.toFixed(2) + " $";
+		}
+	</script>
+</head>
+<body>
+	<h1>Tienda de productos</h1>
+
+	<!-- Producto 1 -->
+	<div>
+		<h2>Producto 1</h2>
+		<span>Precio: 50 $</span><br>
+		<span>Descuento: 10 %</span><br>
+		<button onclick="agregarAlCarrito(50, 10)">Agregar al carrito</button>
+	</div>
+	<br>
+
+	<!-- Producto 2 -->
+	<div>
+		<h2>Producto 2</h2>
+		<span>Precio: 80 $</span><br>
+		<span>Descuento: 15 %</span><br>
+		<button onclick="agregarAlCarrito(80, 15)">Agregar al carrito</button>
+	</div>
+	<br>
+
+	<!-- Producto 3 -->
+	<div>
+		<h2>Producto 3</h2>
+		<span>Precio: 100 $</span><br>
+		<span>Descuento: 20 %</span><br>
+		<button onclick="agregarAlCarrito(100, 20)">Agregar al carrito</button>
+	</div>
+	<br>
+
+	<!-- Precio final -->
+	<div id="precio-final"></div>
+</body>
+</html>
